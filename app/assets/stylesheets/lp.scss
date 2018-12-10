@@ -1,14 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #lp_index {
-  #header {
-    .nav {
-      display: flex;
-      .item-right {
+  #body {
+    margin: 0;
+    padding: 0;
+    width: 1450px;
+    .wrap {
+      position: relative;
+      color: #fff;
+      font-weight: bold;
+      .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 20px 0;
         display: flex;
-        margin-right: 0;
+        background-color: rgba(237, 237, 237, 0.5);
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+        .item-left {
+          margin-left: 40px;
+        }
+        .item-right {
+          width: 100%;
+          text-align: right;
+          margin-right: 40px;
+          span {
+            margin-left: 20px;
+          }
+        }
+      }
+      .screen {
+        background-image: url("/assets/lp/lp_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 700px;
+        .title {
+          padding-top: 160px;
+          .logo {
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .subtitle {
+            text-align: center;
+          }
+        }
+        .btn {
+          display: flex;
+          justify-content: center;
+          margin-top: 30px;
+          p {
+            margin: 20px;
+          }
+        }
+      }
+      .about {
+        background-color: #e86f71;
+        .content {
+          position: relative;
+          &::before {
+            position: absolute;
+            top: -40px;
+            left: -50px;
+            content: "";
+            background-image: url("/assets/lp/frame.png");
+            width: 100px;
+            height: 100px;
+          }
+          &::after {
+            position: absolute;
+            bottom: -40px;
+            right: -50px;
+            content: "";
+            background-image: url("/assets/lp/frame.png");
+            transform: rotate(180deg);
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .how {
+        background-color: #f2c76d;
+      }
+      .attention {
+        background-color: #7bc1a9;
+        .content {
+          position: relative;
+          &::before {
+          position: absolute;
+          content: "";
+          width: 70px;
+          height: 70px;
+          bottom: 0;
+          left: -90px;
+          background-image: url("/assets/lp/warning.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          }
+        }
+      }
+      .container {
+        text-align: center;
+        height: 540px;
+        width: 100%;
+        h2 {
+          padding-top: 70px;
+          margin-bottom: 50px;
+        }
+        .content {
+          width: 28%;
+          line-height: 30px;
+          margin: 0 auto;
+          text-align: left;
+        }
+        .columns {
+          display: flex;
+          justify-content: center;
+          text-align: left;
+          .item {
+            width: 20%;
+            .icon {
+              margin-bottom: 20px;
+              text-align: center;
+            }
+            .text {
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
+        }
       }
     }
-  }
-  #body {
-
   }
 }
