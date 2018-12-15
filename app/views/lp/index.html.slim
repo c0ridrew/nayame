@@ -6,15 +6,15 @@
           .item-left
             p =link_to "home", "#"
           .item-right
-            span =link_to "新規登録", new_user_registration_path
-            span =link_to "ログイン", new_user_session_path
+            span =link_to "新規登録", sign_up_path
+            span =link_to "ログイン", sign_in_path
         .title
           .logo =image_tag "/assets/lp/logo.png"
           .subtitle =image_tag "/assets/lp/subtitle.png"
         .btn
-          p =link_to new_user_registration_path do
+          p =link_to sign_up_path do
               =image_tag "/assets/lp/sign_up.png"
-          p =link_to new_user_session_path do
+          p =link_to sign_in_path do
               =image_tag "/assets/lp/log_in.png"
       .container.about
         h2 =image_tag "/assets/lp/about.png"

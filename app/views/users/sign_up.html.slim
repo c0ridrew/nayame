@@ -1,0 +1,18 @@
+#sign_up
+  h2 新規登録
+  p =@test
+  .wrap
+    = form_for @user, url:session_path do |f|
+      .field
+        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email"
+      .field
+        - if @minimum_password_length
+          p = @minimum_password_length
+          em 文字以上
+        p = f.password_field :password, autocomplete: "new-password", placeholder: "password"
+      .field
+        p = f.label :パスワード確認
+        p = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password-confirmation"
+
+      .actions
+        p = f.submit "", :class => "btn"

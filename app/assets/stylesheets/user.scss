@@ -1,0 +1,78 @@
+#sign_up,#log_in {
+  padding: 80px;
+  h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+    padding: 20px 80px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  .wrap {
+    text-align: center;
+    .field {
+      margin: 50px 0;
+      input {
+        font-size: 24px;
+        text-indent: 50px;
+        padding: 5px 0px;
+        width: 50%;
+        border: none;
+        &::focus {
+
+        }
+      }
+    }
+    .actions {
+      .btn {
+      }
+      input {
+        width: 200px;
+        height: 54px;
+        font-size: 32px;
+        text-decoration: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#sign_up {
+  h2 {
+    background-color: #e86f71;
+  }
+  .wrap {
+    .field {
+      input {
+        border-bottom: 3px solid #e86f71;
+      }
+    }
+    .actions {
+      input {
+        background-image: url("/assets/lp/send1.png");
+      }
+    }
+  }
+}
+
+#log_in {
+  h2 {
+    background-color: #7bc1a9;
+  }
+  .wrap {
+    .field {
+      input {
+        border-bottom: 3px solid #7bc1a9;
+      }
+    }
+    .actions {
+      input {
+        background-image: url("/assets/lp/send2.png");
+      }
+    }
+  }
+}
+
