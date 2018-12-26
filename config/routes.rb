@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  root :to => "lp#index"
+
   resources :lp, only: [:index]
   resources :nayame, only: [:index, :show, :edit]
 
