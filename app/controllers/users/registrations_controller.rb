@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
   end
 
+  def after_sign_in_path_for(resource)
+    nayame_path(resource)
+  end
+
   private
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :age])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
 
 end
