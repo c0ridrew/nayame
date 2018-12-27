@@ -1,0 +1,11 @@
+#log_in
+  h2 ログイン
+  =render 'partial/deviseToastr'
+  .wrap
+    = form_for @user, url: user_session_path do |f|
+      .field
+        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email"
+      .field
+        p = f.text_field :password, autocomplete: "current-password", placeholder: "password"
+      .actions
+        p = f.submit "", :class => "btn"
