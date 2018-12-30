@@ -4,15 +4,12 @@
   .wrap
     = form_for @user, url:user_registration_path do |f|
       .field
-        p = f.text_field :name, placeholder: "name"
+        p = f.text_field :name, placeholder: "名前"
       .field
-        p = f.email_field :email, placeholder: "email"
+        p = f.email_field :email, placeholder: "メールアドレス"
       .field
-        - if @minimum_password_length
-          p = @minimum_password_length
-          em 文字以上
-        p = f.text_field :password, placeholder: "password"
+        p = f.text_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)"
       .field
-        p = f.text_field :password_confirmation, placeholder: "password-confirmation"
+        p = f.text_field :password_confirmation, placeholder: "パスワード再入力"
       .actions
         p = f.submit "", :class => "btn"

@@ -5,8 +5,8 @@
     text-align: center;
     color: #fff;
     font-size: 34px;
-    padding: 20px 80px;
-    width: 200px;
+    padding: 28px 80px;
+    width: 300px;
     margin: 0 auto;
   }
   .wrap {
@@ -15,7 +15,7 @@
       margin: 50px 0;
       input {
         font-size: 24px;
-        text-indent: 50px;
+        text-indent: 60px;
         padding: 5px 0px;
         width: 50%;
         border: none;
@@ -49,6 +49,10 @@
     .field {
       input {
         border-bottom: 3px solid #e86f71;
+      }
+      .length {
+        display: flex;
+        text-align: center;
       }
     }
     .actions {

@@ -4,8 +4,8 @@
   .wrap
     = form_for @user, url: user_session_path do |f|
       .field
-        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email"
+        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
       .field
-        p = f.text_field :password, autocomplete: "current-password", placeholder: "password"
+        p = f.text_field :password, autocomplete: "current-password", placeholder: "パスワード"
       .actions
         p = f.submit "", :class => "btn"

@@ -16,12 +16,14 @@
         position: fixed;
         top: 0;
         width: 100%;
-        padding: 20px 0;
+        padding: 16px 0 8px 0;
         display: flex;
-        background-color: rgba(237, 237, 237, 0.5);
+        background-color: #e86f71;
+        box-shadow: 2px 2px 2px #b7585a;
+        z-index: 10;
         a {
           text-decoration: none;
-          color: #000;
+          color: #fff;
         }
         .item-left {
           margin-left: 40px;

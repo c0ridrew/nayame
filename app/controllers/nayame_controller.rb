@@ -1,7 +1,6 @@
 class NayameController < ApplicationController
   before_action :authenticate
 
-
   def index
   end
 
