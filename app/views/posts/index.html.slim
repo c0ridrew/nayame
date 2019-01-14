@@ -8,7 +8,7 @@
           .info
             p = current_user.email
             p = link_to 'edit', edit_user_registration_path
-            p = image_tag @user.image_url
+            p = image_tag @user.image_url.present? ? @user.image_url : '/assets/lp/connect.png'
             = form_for @user, url:user_registration_path(@user), method: :patch do |f|
               p = f.file_field :image
               p = f.submit
@@ -17,9 +17,6 @@
             .item
               p 2
               p 質問数
-            .item
-              p 2019
-              p 答えた数
             .item
               p 100
               p つながり
@@ -42,6 +39,7 @@
         .wrap
           .section
             p = post.content
+            p = post.id
           .section
             p = link_to "show", post_path(post)
-            p = link_to "share"
+            p = link_to "share", send_answer_path(post)

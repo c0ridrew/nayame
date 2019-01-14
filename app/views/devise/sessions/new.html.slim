@@ -8,6 +8,8 @@
         p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
       .field
         i class = "fa fa-fw fa-lock fa-2x"
-        p = f.text_field :password, autocomplete: "current-password", placeholder: "パスワード再入力"
+        p = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード再入力"
       .actions
         p = f.submit "", :class => "btn"
+
+    p = link_to '新規登録へ', new_user_registration_path

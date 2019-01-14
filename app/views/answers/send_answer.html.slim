@@ -1,0 +1,9 @@
+h2 send
+= form_for @answer, url: receive_answer_path do |f|
+  p = @user.name
+  p さんの悩meに答える
+  p 内容
+  p = @post.content
+  p = f.text_area :content
+  p = f.hidden_field :post_id, :value => @post.id
+  p = f.submit 'send'

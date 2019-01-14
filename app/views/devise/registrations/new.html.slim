@@ -11,9 +11,11 @@
         p = f.email_field :email, placeholder: "メールアドレス"
       .field
         i class = "fa fa-fw fa-lock fa-2x"
-        p = f.text_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)"
+        p = f.password_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)"
       .field
         i class = "fa fa-fw fa-lock fa-2x"
-        p = f.text_field :password_confirmation, placeholder: "パスワード再入力"
+        p = f.password_field :password_confirmation, placeholder: "パスワード再入力"
       .actions
         p = f.submit "", :class => "btn"
+
+  p = link_to 'ログインへ', user_session_path

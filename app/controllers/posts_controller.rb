@@ -32,9 +32,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def receive_answer
-  end
-
   def authenticate
     redirect_to new_user_registration_path, flash: {error: 'ログインしていません'} unless user_signed_in?
   end
