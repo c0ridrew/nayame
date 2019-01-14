@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   }
 
   resources :lp, only: [:index]
-  resources :nayame, only: [:index, :show, :edit]
-
+  resources :posts
+  resources :relationships, only: [:create, :destroy]
+  get 'browse', to: 'posts#browse'
+  post 'receive_answer', to: 'posts#receive_answer'
+  get 'send_answer', to: 'answers#send_answer'
 end

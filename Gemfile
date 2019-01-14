@@ -20,6 +20,8 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'rails-i18n', '~> 5.1'
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

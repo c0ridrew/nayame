@@ -1,15 +1,19 @@
 #sign_up
-  =render 'partial/deviseToastr'
+  = render 'partial/deviseToastr'
   h2 新規登録
   .wrap
     = form_for @user, url:user_registration_path do |f|
       .field
-        p = f.text_field :name, placeholder: "\uF007   名前"
+        i class = "fa fa-fw fa-user fa-2x"
+        p = f.text_field :name, placeholder: "名前"
       .field
-        p = f.email_field :email, placeholder: "\uF0e0  メールアドレス"
+        i class = "fa fa-fw fa-envelope fa-2x"
+        p = f.email_field :email, placeholder: "メールアドレス"
       .field
-        p = f.text_field :password, placeholder: "\uF023   パスワード"
+        i class = "fa fa-fw fa-lock fa-2x"
+        p = f.text_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)"
       .field
-        p = f.text_field :password_confirmation, placeholder: "\uF023   パスワード再入力"
+        i class = "fa fa-fw fa-lock fa-2x"
+        p = f.text_field :password_confirmation, placeholder: "パスワード再入力"
       .actions
         p = f.submit "", :class => "btn"

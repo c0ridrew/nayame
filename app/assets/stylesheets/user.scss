@@ -12,17 +12,23 @@
   .wrap {
     text-align: center;
     .field {
-      margin: 50px 0;
+      margin: 50px auto;
+      position: relative;
+      width: 50%;
       input {
         font-size: 24px;
-        text-indent: 60px;
+        text-indent: 58px;
         padding: 5px 0px;
-        width: 50%;
+        width: 100%;
         border: none;
-        font-family: FontAwesome;
         &::focus {
-
+          outline: 0;
         }
+      }
+      i {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
       }
     }
     .actions {

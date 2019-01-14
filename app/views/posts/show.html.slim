@@ -1,0 +1,5 @@
+#post_show
+  p = @post.content
+  = @post.answers.each do |answer|
+    p = answer.content
+  p = link_to "delete", post_path(@post), method: :delete

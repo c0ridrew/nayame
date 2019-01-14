@@ -1,0 +1,66 @@
+#post_index {
+  width: 1450px;
+  .header {
+  }
+  .body {
+    width: 64%;
+    margin: 0 auto;
+    margin-top: 100px;
+    .profile {
+      background-color: #f2c76d;
+      font-size: 18px;
+      .wrap {
+        display: flex;
+        padding: 20px;
+        .user {
+          width: 30%;
+          .info {
+            text-align: center;
+            img {
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+            }
+          }
+        }
+        .detail {
+          margin-left: 160px;
+          .active {
+            display: flex;
+            .item {
+              padding: 10px;
+              margin-right: 60px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .option {
+      display: flex;
+      width: 100%;
+      color: #fff;
+      .create {
+        background-color: #7bc1a9;
+        width: 50%;
+      }
+      .answer {
+        background-color: #e86f71;
+        width: 50%;
+      }
+      .box {
+        text-align: center;
+      }
+    }
+    .content {
+      text-align: center;
+      padding: 12px;
+      .wrap {
+        margin: 12px 0;
+        padding: 50px 0;
+        border: 2px solid #eeeeee;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,47 @@
+#post_index
+  .header
+  .body
+    .profile
+      .wrap
+        .user
+          .image
+          .info
+            p = current_user.email
+            p = link_to 'edit', edit_user_registration_path
+            p = image_tag @user.image_url
+            = form_for @user, url:user_registration_path(@user), method: :patch do |f|
+              p = f.file_field :image
+              p = f.submit
+        .detail
+          .active
+            .item
+              p 2
+              p 質問数
+            .item
+              p 2019
+              p 答えた数
+            .item
+              p 100
+              p つながり
+          .introduce
+            p profile
+            = form_for @user, url:user_registration_path(@user), method: :patch do |f|
+              p = f.text_area :profile
+              p = f.submit
+    .option
+      .create
+        .box
+          p 質問を作る
+          p = link_to 'new', new_post_path
+      .answer
+        .box
+          p 質問に答える
+          p = link_to 'browse', browse_path
+    .content
+      - @user.posts.each do |post|
+        .wrap
+          .section
+            p = post.content
+          .section
+            p = link_to "show", post_path(post)
+            p = link_to "share"
