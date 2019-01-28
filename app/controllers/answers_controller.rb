@@ -1,19 +1,25 @@
 class AnswersController < ApplicationController
 
-  def send_answer
+  def show
     @answer = Answer.new
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
   end
 
-  def receive_answer
-    post = Post.find(params[:id])
+  def create
     answer = Answer.new(answer_params)
+    post = Post.find(answer.post_id)
     if answer.save
-      redirect_to complete_path, flash: {success: '送信が完了しました！'}
+      redirect_to answers_path, flash: {success: '送信が完了しました！'}
     else
-      redirect_to send_answer_path(post), flash: {error: '入力内容に不備があります。'}
+      redirect_to answer_path(post), flash: {error: '入力内容に不備があります。'}
     end
+  end
+
+  def destroy
+    answer = Answer.find(params[:id])
+    answer.destroy
+    redirect_to post_path(answer.post_id), flash: {info: '答えを削除しました。'}
   end
 
   def complete

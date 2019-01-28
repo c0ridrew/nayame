@@ -1,0 +1,121 @@
+#answer_index {
+  .wrap {
+    text-align: center;
+    padding: 80px;
+    background-color: #e86f71;
+    height: 100vh;
+    width: 100vw;
+    h2 {
+      margin-bottom: 80px;
+    }
+    .promote {
+      .btn {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        .item {
+          margin: 20px;
+          color: #303030;
+          font-size: 18px;
+          p {
+            margin-bottom: 24px;
+          }
+          a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.5s;
+            &:hover {
+              font-size: 110%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#answer_show {
+  background-color: #7bc1a9;
+  width: 100vw;
+  .wrap {
+    text-align: center;
+    padding: 100px;
+    width: 64%;
+    margin: 0 auto;
+    h2 {
+      margin: 0;
+      margin-bottom: 20px;
+      line-height: 40px;
+    }
+    .outer {
+      .content {
+        position: relative;
+        background-color: #fff;
+        padding: 40px 20px;
+        border-radius: 5px;
+        font-size: 24px;
+        word-break: break-all;
+        &::before {
+          position: absolute;
+          content: "";
+          background-image: url("https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-mini.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 50px;
+          height: 50px;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+      .answer {
+        textarea {
+          font-size: 24px;
+          outline: none;
+          border: none;
+          width: 90%;
+          height: 180px;
+          padding: 20px;
+          margin: 20px;
+          border-radius: 5px;
+          display: inline-block;
+          vertical-align: middle;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #answer_show {
+    .wrap {
+      padding: 40px 20px;
+      width: 100%;
+      .outer {
+        .content::before {
+          width: 30px;
+          height: 30px;
+        }
+        .answer {
+          textarea {
+            font-size: 18px;
+          }
+        }
+        .button {
+          margin-top: 30px;
+          input {
+            background-color: #fff;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
+
+
+
+

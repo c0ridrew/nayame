@@ -4,47 +4,62 @@
       .screen
         .nav
           .item-left
-            p = link_to "home", "#"
+            p = link_to "home", root_path
           .item-right
-            span = link_to "新規登録", new_user_registration_path
-            span = link_to "ログイン", new_user_session_path
-            span = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            - if user_signed_in?
+              span = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            - else
+              span = link_to "新規登録", new_user_registration_path
+              span = link_to "ログイン", new_user_session_path
         .title
-          .logo = image_tag "/assets/lp/logo.png"
-          .subtitle = image_tag "/assets/lp/subtitle.png"
+          - if browser.device.mobile?
+            .logo = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
+          - else
+            .logo = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo.png"
         .btn
-          p = link_to new_user_registration_path do
-              = image_tag "/assets/lp/sign_up.png"
-          p = link_to new_user_session_path do
-              = image_tag "/assets/lp/log_in.png"
+          .item
+            - if user_signed_in?
+              p = link_to 'マイページへ', posts_path, :class => "mypage"
+            - else
+              p = link_to '新規登録', new_user_registration_path, :class => "sign_up"
+              p = link_to 'ログイン', new_user_session_path, :class => "sign_in"
       .container.about
-        h2 = image_tag "/assets/lp/about.png"
+        .title
+          h2 About
+          p -どんなサービス？-
         .content
           p なやme.は抱えているなやみ、または素朴な疑問などを投稿し、匿名で答えてもらうサービスです。例えば「オススメのダイエット方法はありますか？」や、「将来の進路について悩んでいる」などなんでも構いません。あなたが気になることを投稿し、SNSなどでシェアして回答を募集しましょう！
       .container.how
-        h2 = image_tag "/assets/lp/how.png"
+        .title
+          h2 How
+          p -使い方-
         .columns
           .item
             .icon
-              p = image_tag "/assets/lp/note.png"
+              p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/note.png"
               p 質問を作る
             .text
-              p ログインしてMy pageから質問を作ろう！そしてその作った質問をSNSなどでシェアして
+              p ログインしてMy Pageから質問を作ろう！質問内容はどんな些細なことでも大丈夫、日頃抱えている悩みから少し気になることまで、みんなの意見などを募集しよう！
           .item
             .icon
-              p = image_tag "/assets/lp/connect.png"
-              p つながる
+              p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/connect.png"
+              p シェアする
             .text
-              p 質問に答えてくれた人、質問に回答した人とはつながることができます！つながりの中に入った人は悩みを投稿した際、通知が届くまたは通知が送られます！
+              p 作った質問をSNSなどでシェアしよう！Twitter, LINE, Instagram, FacebookなどにMy Pageのシェアボタンからリンク先をコピーして貼り付けよう！
           .item
             .icon
-              p = image_tag "/assets/lp/heart.png"
-              p 質問に答える
+              p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/heart.png"
+              p 質問が届く
             .text
-              p 質問に答えていろんな人と繋がろう！質問に答えた人は「繋がり」リストに加わり、投稿した際通知が届くようになります。
+              p My pageから自分が作った質問をクリックすると、届いたメッセージが見れます！回答は全部匿名で送られてきて、質問を作ったあなたにしか見えません。
           p
       .container.attention
-        h2 = image_tag "/assets/lp/attention.png"
+        .title
+          h2 Attension
+          p -使用上の注意-
         .content
-          p 匿名で回答はできますが、相手を誹謗中傷するようなメッセージを送信した場合相手にレポートされることがあります。レポートの回数が１０回を超えたユーザーのアカウントは停止されますので、相手を想いやったメッセージを送るようにして下さい。本サービス利用の際の一切のトラブルはユーザ様自身の責任となりますので、ネットリテラシーを持って、正しく楽しく使用してください。
+          p 悩meは匿名で回答が送信されますが、相手を誹謗中傷するようなメッセージを送信することはお控えください。本サービス利用の際の一切のトラブルはユーザ様自身の責任となりますので、ネットリテラシーを持って、正しく楽しく使用してください。サービス改善のため、バグや希望改善箇所等ありましたら、下のリンク先にある「システムに関するご意見・ご要望」をクリックし、メッセージを送信してください。
+  #footer
+    = render 'partial/footer'
+
 

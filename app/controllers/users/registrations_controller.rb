@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if user.update_attributes(update_params)
       redirect_to posts_path, flash: {info: 'プロフィールを変更しました。'}
     else
-      redirect_to edit_user_registration_path, flash: {error: 'プロフィール変更に失敗しました。'}
+      redirect_to edit_user_registration_path, flash: {error: 'すでに使用されているメールアドレスです。'}
     end
   end
 
@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def update_params
-      params.require(:user).permit(:name, :email, :image, :profile)
+      params.require(:user).permit(:name, :email, :password)
     end
 
 end

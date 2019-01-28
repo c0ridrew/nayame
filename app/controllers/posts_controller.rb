@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    redirect_to posts_path, flash: {error: '権限がありません'} unless current_user.id == @post.user_id
   end
 
   def new
@@ -14,8 +15,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
+    post = Post.find(params[:id])
+    post.destroy
     redirect_to posts_path, flash: {info: '投稿を削除しました。'}
   end
 
@@ -24,12 +25,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, flash: {success: '投稿が完了しました！'}
     else
-      redirect_to :back, flash: {error: '入力内容に不備があります。'}
+      render "new", flash: {error: '入力内容に不備があります。'}
     end
-  end
-
-  def browse
-    @posts = Post.all
   end
 
   def authenticate
@@ -38,6 +35,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:content, :like, :user_id)
+      params.require(:post).permit(:content, :user_id)
     end
 end

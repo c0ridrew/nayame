@@ -5,17 +5,17 @@
     = form_for @user, url:user_registration_path do |f|
       .field
         i class = "fa fa-fw fa-user fa-2x"
-        p = f.text_field :name, placeholder: "名前"
+        p = f.text_field :name, placeholder: "名前", required: true
       .field
         i class = "fa fa-fw fa-envelope fa-2x"
-        p = f.email_field :email, placeholder: "メールアドレス"
+        p = f.email_field :email, placeholder: "メールアドレス", required: true
       .field
         i class = "fa fa-fw fa-lock fa-2x"
-        p = f.password_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)"
+        p = f.password_field :password, placeholder: "パスワード(#{@minimum_password_length}文字以上)", required: true
       .field
         i class = "fa fa-fw fa-lock fa-2x"
-        p = f.password_field :password_confirmation, placeholder: "パスワード再入力"
+        p = f.password_field :password_confirmation, placeholder: "パスワード再入力", required: true
       .actions
-        p = f.submit "", :class => "btn"
-
-  p = link_to 'ログインへ', user_session_path
+        p = f.submit "\uf138 登録", :class => "btn"
+        .link
+          p = link_to 'ログインへ', user_session_path, class: "btn btn-success"
