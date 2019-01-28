@@ -1,0 +1,16 @@
+#answer_index
+  .wrap
+    h2 回答の送信に成功しました!
+    .promote
+      h3 あなたも悩meを利用して質問を作ってみませんか？
+      .btn
+        .item
+          p アカウント作成はこちら
+          = link_to new_user_registration_path do
+            i class = "fa fa-fw fa-user-plus fa-3x"
+            p 新規登録
+        .item
+          p すでにアカウントをお持ちですか？
+          = link_to new_user_session_path do
+            i class = "fa fa-fw fa-sign-in fa-3x"
+            p ログイン

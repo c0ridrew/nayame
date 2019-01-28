@@ -13,11 +13,18 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
-gem 'font-awesome-rails'
+gem "font-awesome-rails"
+gem 'font-awesome-sass', '5.3.1'
 gem 'toastr-rails'
 gem 'devise'
 gem 'jquery-rails'
 gem 'rails-i18n', '~> 5.1'
+gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog-aws'
+gem 'browser'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

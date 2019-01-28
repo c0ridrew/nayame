@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   }
 
   resources :lp, only: [:index]
-  resources :nayame, only: [:index, :show, :edit]
-
+  resources :posts
+  resources :relationships, only: [:create, :destroy]
+  resources :answers, only: [:index, :show, :create, :destroy]
 end

@@ -1,11 +1,15 @@
 #log_in
   h2 ログイン
-  =render 'partial/deviseToastr'
+  = render 'partial/deviseToastr'
   .wrap
     = form_for @user, url: user_session_path do |f|
       .field
-        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email"
+        i class = "fa fa-fw fa-envelope fa-2x"
+        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", required: true
       .field
-        p = f.text_field :password, autocomplete: "current-password", placeholder: "password"
+        i class = "fa fa-fw fa-lock fa-2x"
+        p = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード再入力", required: true
       .actions
-        p = f.submit "", :class => "btn"
+        p = f.submit "\uf138 ログイン", :class => "btn"
+        .link
+          p = link_to '新規登録へ', new_user_registration_path, class: "btn btn-danger"

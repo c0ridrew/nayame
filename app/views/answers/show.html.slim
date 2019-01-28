@@ -1,0 +1,17 @@
+#answer_show
+  .wrap
+    = form_for @answer, :url => { :action => :create } do |f|
+      h2
+        = @user.name
+        | さんの
+        br
+        | 悩meに答える
+      .outer
+        .content
+          p = @post.content
+        .answer
+          p = f.text_area :content, :required => true, :placeholder => "悩meに答えよう！", :maxlength => "100"
+          p = f.hidden_field :post_id, :value => @post.id
+          p ※回答は匿名で送られますが、誹謗中傷などの回答を送信するのは禁止されております。
+        .button
+          p = f.submit '送信', class: "btn"

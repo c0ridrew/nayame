@@ -1,0 +1,13 @@
+#post_new
+  = form_for @post do |f|
+    .wrap
+      .title
+        p
+          = current_user.name
+          em さんの悩meです
+      .content
+        p = f.hidden_field :user_id, value: current_user.id
+        p = f.text_area :content, :maxlength => "100"
+      .button
+        p = f.submit "投稿する", :class => "btn"
+
