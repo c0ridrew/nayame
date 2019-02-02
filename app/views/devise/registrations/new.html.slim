@@ -19,3 +19,4 @@
         p = f.submit "\uf138 登録", :class => "btn"
         .link
           p = link_to 'ログインへ', user_session_path, class: "btn btn-success"
+          p = link_to 'Twitterログイン', user_twitter_omniauth_authorize_path
