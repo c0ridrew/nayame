@@ -4,7 +4,6 @@
       .wrap
         p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
         p = current_user.name
-        p = current_user.email
         p = link_to "\uf007 編集", edit_user_registration_path
         p = link_to "\uf011 ログアウト", destroy_user_session_path, method: :delete
     .option
@@ -36,3 +35,4 @@
             .text
               p 上のボタンから
               br 悩meを作成しよう！
+

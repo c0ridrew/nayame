@@ -1,9 +1,10 @@
 #post_index {
   width: 1450px;
+  background-color: #e2e2e2;
   .body {
     width: 64%;
     margin: 0 auto;
-    margin-top: 100px;
+    padding-top: 40px;
     a {
       font-family: FontAwesome;
       color: #333;
@@ -79,6 +80,7 @@
 #post_new, #post_show {
   width: 100vw;
   background-color: #f2c76d;
+  min-height: 100vh;
   .wrap {
     background-color: #f2c76d;
     text-align: center;
@@ -179,12 +181,20 @@
   }
 }
 
+#nav-home {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  background-color: #FFF;
+}
+
 @media screen and (max-width: 640px) {
   #post_index {
     width: 100%;
     .body {
       width: 100%;
-      margin-top: 0;
+      padding-top: 0;
       .content {
         .wrap {
           margin: 0;
@@ -259,5 +269,9 @@
         }
       }
     }
+  }
+  #nav-home {
+    bottom: 20px;
+    right: 20px;
   }
 }

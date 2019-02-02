@@ -1,6 +1,8 @@
 @import "toastr";
 #sign_up,#log_in, #edit {
   padding: 80px;
+  background-color: #e6e6e6;
+  min-height: 100vh;
   h2 {
     text-align: center;
     color: #fff;
@@ -26,9 +28,10 @@
         padding: 5px 0px;
         width: 100%;
         border: none;
+        background-color: #e6e6e6;
         &:focus {
           outline: 0;
-          background-color: #efefef;
+          background-color: #fff;
         }
       }
     }
@@ -45,6 +48,11 @@
       .link {
         position: absolute;
         right: 330px;
+        top: -30px;
+      }
+      .sns {
+        position: absolute;
+        left: 330px;
         top: -30px;
       }
     }
@@ -127,7 +135,7 @@
 @media screen and (max-width: 640px) {
   #sign_up, #log_in, #edit {
     padding: 0;
-    margin-top: 20px;
+    padding-top: 20px;
     .wrap {
       margin-top: 70px;
       .field {
@@ -141,6 +149,10 @@
         .link {
           top: 90px;
           right: 20px;
+        }
+        .sns {
+          top: 90px;
+          left: 30px;
         }
       }
     }
