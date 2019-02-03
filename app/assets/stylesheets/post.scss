@@ -1,6 +1,7 @@
 #post_index {
   width: 1450px;
   background-color: #e2e2e2;
+  min-height: 100vh;
   .body {
     width: 64%;
     margin: 0 auto;
@@ -67,8 +68,14 @@
           .option {
             display: flex;
             .item {
+              color: #333;
               width: 95%;
               margin: 0 auto;
+              .twitter {
+                outline: none;
+                border: none;
+                background-color: #f2c76d;
+              }
             }
           }
         }
@@ -78,7 +85,7 @@
 }
 
 #post_new, #post_show {
-  width: 100vw;
+  min-width: 100vw;
   background-color: #f2c76d;
   min-height: 100vh;
   .wrap {
@@ -122,12 +129,14 @@
     .btn {
       margin-top: 20px;
       transition: 0.5s;
+      background-color: #FFF;
       &:hover {
         border: solid 2px #fff;
       }
     }
     input {
       border: none;
+      background-color: #fff;
     }
   }
 }

@@ -25,9 +25,11 @@
                     i class = "fa fa-fw fa-envelope fa-3x"
                     p メッセージ
                 .item
-                  = link_to answer_path(post) do
-                    i class = "fa fa-fw fa-share-alt fa-3x"
-                    p シェア
+                  = form_tag tweet_posts_path do
+                    .sns
+                      i class = "fa fa-fw fa-twitter fa-3x"
+                      = hidden_field_tag :tweet, @user.name.to_s+"さんが悩meを投稿しました。"+"\n"+post.content.to_s+"\n"+request.url.gsub!("posts","answers").to_s+"/"+post.id.to_s
+                      p = submit_tag "シェアする", class: "twitter"
     - else
       .content
         .wrap

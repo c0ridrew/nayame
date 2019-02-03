@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   }
 
   resources :lp, only: [:index]
-  resources :posts
+  resources :posts do
+    collection do
+      post 'tweet'
+    end
+  end
   resources :relationships, only: [:create, :destroy]
   resources :answers, only: [:index, :show, :create, :destroy]
+
+
 end

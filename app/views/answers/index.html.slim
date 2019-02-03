@@ -1,16 +1,30 @@
 #answer_index
   .wrap
-    h2 回答の送信に成功しました!
+    .logo = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
+    h2
+     |回答の送信に
+     br
+     |成功しました!
+
     .promote
-      h3 あなたも悩meを利用して質問を作ってみませんか？
+      h3
+        |あなたも悩meを利用して
+        br
+        |質問を作ってみませんか？
       .btn
         .item
-          p アカウント作成はこちら
+          p
+           |アカウント作成は
+           br
+           |こちら
           = link_to new_user_registration_path do
             i class = "fa fa-fw fa-user-plus fa-3x"
             p 新規登録
         .item
-          p すでにアカウントをお持ちですか？
+          p
+            |すでにアカウントを
+            br
+            |お持ちですか？
           = link_to new_user_session_path do
             i class = "fa fa-fw fa-sign-in fa-3x"
             p ログイン

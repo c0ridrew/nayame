@@ -1,4 +1,5 @@
 @import "toastr";
+
 #sign_up,#log_in, #edit {
   padding: 80px;
   background-color: #e6e6e6;
@@ -136,6 +137,7 @@
   #sign_up, #log_in, #edit {
     padding: 0;
     padding-top: 20px;
+    min-height: 100vh;
     .wrap {
       margin-top: 70px;
       .field {
@@ -147,11 +149,11 @@
       }
       .actions {
         .link {
-          top: 90px;
+          top: 70px;
           right: 20px;
         }
         .sns {
-          top: 90px;
+          top: 70px;
           left: 30px;
         }
       }
