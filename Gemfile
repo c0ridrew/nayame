@@ -25,6 +25,9 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'browser'
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

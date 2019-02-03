@@ -1,9 +1,13 @@
+= render 'partial/nav_home'
+
 #post_show
   .wrap
     .title
       p
         = current_user.name
-        em さんの悩meです
+        |さんの
+        br
+        |悩meです
     .content
       .text
         p = @post.content

@@ -1,12 +1,12 @@
 #answer_index {
   .wrap {
     text-align: center;
-    padding: 80px;
+    padding: 40px;
     background-color: #e86f71;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     h2 {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
     .promote {
       .btn {
@@ -15,7 +15,7 @@
         justify-content: center;
         margin-top: 40px;
         .item {
-          margin: 20px;
+          margin: 40px;
           color: #303030;
           font-size: 18px;
           p {
@@ -36,7 +36,7 @@
 }
 #answer_show {
   background-color: #7bc1a9;
-  width: 100vw;
+  min-width: 100vw;
   .wrap {
     text-align: center;
     padding: 100px;
@@ -87,6 +87,22 @@
 }
 
 @media screen and (max-width: 640px) {
+  #answer_index {
+    .wrap {
+      padding: 20px;
+      .promote {
+        margin: 0;
+        .btn {
+          display: block;
+          .item {
+            margin: 0;
+            padding: 10px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
   #answer_show {
     .wrap {
       padding: 40px 20px;

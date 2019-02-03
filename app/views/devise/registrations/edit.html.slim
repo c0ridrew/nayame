@@ -1,3 +1,5 @@
+= render 'partial/nav_home'
+
 #edit
   h2 ユーザー情報の編集
   .wrap
@@ -5,8 +7,6 @@
       .field
         i class = "fa fa-fw fa-user fa-2x"
         p = f.text_field :name, autocomplete: "name", placeholder: "名前", required: true
-      .field
-        i class = "fa fa-fw fa-envelope fa-2x"
-        p = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", required: true
+
       .actions
-        p = f.submit "\uf138 送信", :class => "btn"
+        p = f.submit "\uf138 更新", :class => "btn"
