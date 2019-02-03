@@ -1,13 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'M PLUS Rounded 1c', 'Dosis', sans-serif;
+  letter-spacing: 2px;
 }
 
 #lp_index {
+  width: 1450px;
+  min-height: 100vh;
   #body {
     margin: 0;
     padding: 0;
-    width: 1450px;
     .wrap {
       position: relative;
       color: #fff;
@@ -16,12 +19,18 @@
         position: fixed;
         top: 0;
         width: 100%;
-        padding: 20px 0;
+        padding: 16px 0 8px 0;
         display: flex;
-        background-color: rgba(237, 237, 237, 0.5);
+        background-color: #e86f71;
+        box-shadow: 2px 2px 2px #b7585a;
+        z-index: 10;
         a {
           text-decoration: none;
-          color: #000;
+          color: #fff;
+          transition: 0.5s;
+          &:hover {
+            letter-spacing: 6px;
+          }
         }
         .item-left {
           margin-left: 40px;
@@ -36,7 +45,7 @@
         }
       }
       .screen {
-        background-image: url("/assets/lp/lp_bg.png");
+        background-image: url("https://s3-ap-northeast-1.amazonaws.com/nayame/lp/lp_bg.png");
         background-repeat: no-repeat;
         background-size: cover;
         height: 700px;
@@ -51,16 +60,54 @@
           }
         }
         .btn {
-          display: flex;
-          justify-content: center;
-          margin-top: 30px;
-          p {
+          width: 100%;
+          margin-top: 60px;
+          cursor: auto;
+          .item {
+            display: flex;
+            justify-content: center;
+          }
+          a {
+            padding: 20px 70px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.5s;
             margin: 20px;
+          }
+          a.sign_up {
+            background-color: #e86f71;
+            &:hover {
+              background-color: #fff;
+              border: solid 2px #e86f71;
+              color: #e86f71;
+            }
+          }
+          a.sign_in {
+            background-color: #7bc1a9;
+            &:hover {
+              background-color: #fff;
+              border: solid 2px #7bc1a9;
+              color: #7bc1a9;
+            }
+          }
+          a.mypage {
+            background-color: #f2c76d;
+            &:hover {
+              background-color: #fff;
+              border: solid 2px #f2c76d;
+              color: #f2c76d;
+            }
+          }
+          p {
+            margin: 0
           }
         }
       }
       .about {
         background-color: #e86f71;
+        transition: 0.5s;
         .content {
           position: relative;
           &::before {
@@ -68,7 +115,8 @@
             top: -40px;
             left: -50px;
             content: "";
-            background-image: url("/assets/lp/frame.png");
+            border-left: 2px solid #fff;
+            border-top: 2px solid #fff;
             width: 100px;
             height: 100px;
           }
@@ -77,8 +125,8 @@
             bottom: -40px;
             right: -50px;
             content: "";
-            background-image: url("/assets/lp/frame.png");
-            transform: rotate(180deg);
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
             width: 100px;
             height: 100px;
           }
@@ -98,7 +146,7 @@
           height: 70px;
           bottom: 0;
           left: -90px;
-          background-image: url("/assets/lp/warning.png");
+          background-image: url("https://s3-ap-northeast-1.amazonaws.com/nayame/lp/warning.png");
           background-repeat: no-repeat;
           background-size: contain;
           }
@@ -108,9 +156,16 @@
         text-align: center;
         height: 540px;
         width: 100%;
-        h2 {
+        .title {
           padding-top: 70px;
           margin-bottom: 50px;
+          h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+          }
+          p {
+              font-size: 18px;
+          }
         }
         .content {
           width: 28%;
@@ -132,6 +187,71 @@
               width: 80%;
               margin: 0 auto;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  text-align: center;
+  width: 100%;
+  background-color: #5a5a5a;
+  .wrap {
+    h3 {
+      font-size: 12px;
+      color: #fff;
+      margin: 0;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #lp_index {
+    width: 100%;
+    #body {
+      .wrap {
+        .about {
+          .content::before {
+            top: -30px;
+            left: -30px;
+          }
+          .content::after {
+            bottom: -30px;
+            right: -30px;
+          }
+        }
+        .container {
+          height: auto;
+          padding: 0 20px 40px 20px;
+          .content {
+            width: 84%;
+          }
+          .columns {
+            display: block;
+            .item {
+              width: 100%;
+              margin-bottom: 30px;
+              .icon {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        .screen {
+          .btn {
+            a {
+              padding: 30px 40px;
+              margin: 0 10px;
+            }
+          }
+        }
+        .attention {
+          .content::before {
+            top: -80px;
+            left: -30px;
           }
         }
       }

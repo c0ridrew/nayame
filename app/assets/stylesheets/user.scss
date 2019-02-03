@@ -1,41 +1,60 @@
 @import "toastr";
-#sign_up,#log_in {
+
+#sign_up,#log_in, #edit {
   padding: 80px;
+  background-color: #e6e6e6;
+  min-height: 100vh;
   h2 {
     text-align: center;
     color: #fff;
-    font-size: 34px;
-    padding: 20px 80px;
-    width: 200px;
+    font-size: 32px;
+    padding: 28px 80px;
+    width: 300px;
     margin: 0 auto;
   }
   .wrap {
     text-align: center;
     .field {
-      margin: 50px 0;
+      margin: 50px auto;
+      position: relative;
+      width: 50%;
+      i {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+      }
       input {
         font-size: 24px;
-        text-indent: 50px;
+        text-indent: 58px;
         padding: 5px 0px;
-        width: 50%;
+        width: 100%;
         border: none;
-        &::focus {
-
+        background-color: #e6e6e6;
+        &:focus {
+          outline: 0;
+          background-color: #fff;
         }
       }
     }
     .actions {
-      .btn {
-      }
+      position: relative;
       input {
-        width: 200px;
-        height: 54px;
-        font-size: 32px;
-        text-decoration: none;
-        background-size: contain;
-        background-repeat: no-repeat;
         border: none;
         cursor: pointer;
+        font-family: FontAwesome;
+        color: #fff;
+        padding: 10px 28px;
+        transition: 0.5s;
+      }
+      .link {
+        position: absolute;
+        right: 330px;
+        top: -30px;
+      }
+      .sns {
+        position: absolute;
+        left: 330px;
+        top: -30px;
       }
     }
   }
@@ -50,10 +69,17 @@
       input {
         border-bottom: 3px solid #e86f71;
       }
+      .length {
+        display: flex;
+        text-align: center;
+      }
     }
     .actions {
       input {
-        background-image: url("/assets/lp/send1.png");
+        background-color: #e86f71;
+        &:hover {
+          border: solid 2px #e86f71;
+        }
       }
     }
   }
@@ -71,9 +97,66 @@
     }
     .actions {
       input {
-        background-image: url("/assets/lp/send2.png");
+        background-color: #7bc1a9;
+        &:hover {
+          border: solid 2px #7bc1a9;
+          background-color: #fff;
+          color: #7bc1a9;
+        }
       }
     }
   }
 }
 
+#edit {
+  h2 {
+    background-color: #f2c76d;
+    font-size: 24px;
+    padding: 20px;
+  }
+  .wrap {
+    .field {
+      input {
+        border-bottom: 3px solid #f2c76d;
+      }
+    }
+    .actions {
+      input {
+        background-color: #f2c76d;
+        &:hover {
+          border: solid 2px #f2c76d;
+          background-color: #fff;
+          color: #f2c76d;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #sign_up, #log_in, #edit {
+    padding: 0;
+    padding-top: 20px;
+    min-height: 100vh;
+    .wrap {
+      margin-top: 70px;
+      .field {
+        width: 90%;
+        margin-top: 50px;
+        input {
+          font-size: 20px;
+        }
+      }
+      .actions {
+        .link {
+          top: 70px;
+          right: 20px;
+        }
+        .sns {
+          top: 70px;
+          left: 30px;
+        }
+      }
+    }
+  }
+}

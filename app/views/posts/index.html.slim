@@ -1,0 +1,40 @@
+#post_index
+  .body
+    .profile
+      .wrap
+        p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
+        p = current_user.name
+        p = link_to "\uf007 編集", edit_user_registration_path
+        p = link_to "\uf011 ログアウト", destroy_user_session_path, method: :delete
+    .option
+      .create
+        .box
+          = link_to new_post_path do
+            i class = "fa fa-fw fa-edit fa-4x"
+            p 作る
+    - if @user.posts.present?
+      .content
+        - @user.posts.each do |post|
+          .wrap
+            .outer
+              .text
+                p = post.content
+              .option
+                .item
+                  = link_to post_path(post) do
+                    i class = "fa fa-fw fa-envelope fa-3x"
+                    p メッセージ
+                .item
+                  = form_tag tweet_posts_path do
+                    .sns
+                      i class = "fa fa-fw fa-twitter fa-3x"
+                      = hidden_field_tag :tweet, @user.name.to_s+"さんが悩meを投稿しました。"+"\n"+post.content.to_s+"\n"+request.url.gsub!("posts","answers").to_s+"/"+post.id.to_s
+                      p = submit_tag "シェアする", class: "twitter"
+    - else
+      .content
+        .wrap
+          .outer
+            .text
+              p 上のボタンから
+              br 悩meを作成しよう！
+

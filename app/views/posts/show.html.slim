@@ -1,0 +1,24 @@
+= render 'partial/nav_home'
+
+#post_show
+  .wrap
+    .title
+      p
+        = current_user.name
+        |さんの
+        br
+        |悩meです
+    .content
+      .text
+        p = @post.content
+        .button
+          p = link_to "\uf1f8 削除", post_path(@post), method: :delete, :class => "btn btn-danger"
+
+      - if @post.answers.present?
+        .answer
+          - @post.answers.each do |answer|
+            p = answer.content
+            p = link_to "\uf1f8 削除", answer_path(answer), method: :delete, :class => "btn btn-danger"
+      - else
+        .empty
+          p 答えが届くと表示されます！
