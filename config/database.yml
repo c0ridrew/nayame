@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: nayame_production
-  username: nayame
-  password: <%= ENV['NAYAME_DATABASE_PASSWORD'] %>
+  username: root
+  password: 
