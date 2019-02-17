@@ -29,7 +29,7 @@
                     .sns
                       i class = "fa fa-fw fa-twitter fa-3x"
                       = hidden_field_tag :tweet, @user.name.to_s+"さんが悩meを投稿しました。"+"\n"+post.content.to_s+"\n"+request.url.gsub!("posts","answers").to_s+"/"+post.id.to_s
-                      p = submit_tag "シェアする", class: "twitter"
+                      p = submit_tag "シェアする", data: { title: "下記の内容でtwitterに投稿します、よろしいですか？", confirm: "#{post.content}", commit: "投稿", cancel: "やっぱりやめる"}, class: "twitter"
     - else
       .content
         .wrap
