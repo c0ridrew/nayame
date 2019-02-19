@@ -13,10 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery
+//= require jquery_ujs
+//= require_tree .
 //= require toastr
 //= require bootstrap-sprockets
 //= require data-confirm-modal
+
+@import "clipboard.min.js"
+@import "post.js";
 
 

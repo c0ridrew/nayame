@@ -29,6 +29,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'data-confirm-modal'
+gem 'seed-fu'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

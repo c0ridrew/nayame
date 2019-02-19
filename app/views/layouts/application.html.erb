@@ -4,8 +4,8 @@
     <title>Nayame</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name=“twitter:card” content=“summary_large_image” />
-    <meta name="twitter:site" content="@user" />
+    <meta name=“twitter:card” content=“summary” />
+    <meta name="twitter:site" content="hello" />
     <meta property="og:url" content="https://nayame.site/" />
     <meta property="og:title" content="nayame" />
     <meta property="og:description" content="記事の要約（ディスクリプション）" />
@@ -18,9 +18,18 @@
         enable_page_level_ads: true
       });
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134699155-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-134699155-1');
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'nayame', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png') %>
   </head>
 
   <body>

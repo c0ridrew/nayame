@@ -1,5 +1,7 @@
 {
   "name": "nayame",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "clipboard": "^2.0.4"
+  }
 }

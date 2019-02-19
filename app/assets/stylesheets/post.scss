@@ -67,14 +67,45 @@
           }
           .option {
             display: flex;
+            p {
+              margin: 0;
+            }
             .item {
               color: #333;
               width: 95%;
               margin: 0 auto;
-              .twitter {
-                outline: none;
-                border: none;
-                background-color: #f2c76d;
+              .sns {
+                position: relative;
+                #url {
+                  color: #f2c76d;
+                  width: 10px;
+                }
+                .link {
+                  display: none;
+                  position: absolute;
+                  bottom: 0;
+                  left: 260px;
+                  width: 300px;
+                  padding: 20px;
+                  background-color: #fff;
+                  box-shadow: 0 0 5px #333;
+                  .box {
+                    width: 50%;
+                    i, a {
+                      font-size: 42px;
+                    }
+                    #textBox {
+                      display: none;
+                    }
+                    .btnClipboard {
+                      padding: 10px 30px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+                .clicked {
+                  display: flex;
+                }
               }
             }
           }

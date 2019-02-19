@@ -12,13 +12,13 @@
       .text
         p = @post.content
         .button
-          p = link_to "\uf1f8 削除", post_path(@post), method: :delete, :class => "btn btn-danger"
+          p = link_to "\uf1f8 削除", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？", commit: "削除", cancel: "やめる"}, :class => "btn btn-danger"
 
       - if @post.answers.present?
-        .answer
-          - @post.answers.each do |answer|
+        - @post.answers.each do |answer|
+          .answer
             p = answer.content
-            p = link_to "\uf1f8 削除", answer_path(answer), method: :delete, :class => "btn btn-danger"
+            p = link_to "\uf1f8 削除", answer_path(answer), method: :delete, data: {confirm: "本当に削除してよろしいですか？", commit: "削除", cancel: "やめる"}, :class => "btn btn-danger"
       - else
         .empty
           p 答えが届くと表示されます！
