@@ -1,5 +1,5 @@
 $(function(){
-  $('.sns').on('click', function(){
+  $(document).on('click','#share', function(){
     $('.link').toggleClass("clicked");
   });
 });

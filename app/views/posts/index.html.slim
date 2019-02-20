@@ -27,13 +27,14 @@
                 .item
                   = form_tag tweet_posts_path do
                     .sns
-                      i class = "fa fa-fw fa-share fa-3x"
+                      #share
+                        i class = "fa fa-fw fa-share fa-3x"
                       p シェアする
                       #url
                         | https://nayame.site/answers/#{post.id}
                       .link
                         .box
-                          = link_to "\uf099", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fnayame.net%2Fanswers%2F#{post.id}&text=#{current_user.name}さんの悩meです。&hashtags=nayame"
+                          = link_to "\uf099", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fnayame.net%2Fanswers%2F#{post.id}&text=#{current_user.name}さんの悩meです。#{current_user.name}さんの悩meに答えてあげよう！&hashtags=nayame"
                           p twitterでシェア
                         .box
                           .btnClipboard data-clipboard-target="#url"
