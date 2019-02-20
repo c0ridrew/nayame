@@ -20,7 +20,7 @@
 //= require bootstrap-sprockets
 //= require data-confirm-modal
 
-@import "clipboard.min.js"
-@import "post.js";
+//= require clipboard.min.js
+//= requier post.js
 
 
