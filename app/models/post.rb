@@ -3,4 +3,8 @@ class Post < ApplicationRecord
 
   has_many :answers, foreign_key: "post_id", :dependent => :destroy, class_name: "Answer"
   has_many :users, foreign_key: "user_id", class_name: "Post"
+
+  default_scope -> {
+    order(created_at: :desc)
+  }
 end

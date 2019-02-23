@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
-  mount_uploader :image, ImageUploader
+
   has_many :posts, foreign_key: "user_id", :dependent => :destroy, class_name: "Post"
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

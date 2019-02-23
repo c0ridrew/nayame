@@ -1,5 +1,5 @@
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
-/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20181202-31543-1bba576.rb extconf.rb
+/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190223-82660-ivyz7x.rb extconf.rb
 creating Makefile
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
@@ -16,4 +16,4 @@ linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20181202-31543-1kltto
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20190223-82660-1dewxzy

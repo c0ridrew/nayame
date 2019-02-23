@@ -74,15 +74,9 @@
               color: #333;
               width: 95%;
               margin: 0 auto;
-              .sns {
+              #share {
                 position: relative;
-                #url {
-                  color: #f2c76d;
-                  width: 10px;
-                }
-                #share {
-                  cursor: pointer;
-                }
+                cursor: pointer;
                 .link {
                   display: none;
                   position: absolute;
@@ -92,13 +86,17 @@
                   padding: 20px;
                   background-color: #fff;
                   box-shadow: 0 0 5px #333;
+                  z-index: 1;
                   .box {
                     width: 50%;
+                    position: relative;
+                    z-index: 1;
                     i, a {
                       font-size: 42px;
                     }
-                    #textBox {
-                      display: none;
+                    .url {
+                      position: absolute;
+                      opacity: 0;
                     }
                     .btnClipboard {
                       padding: 10px 30px;
@@ -251,6 +249,27 @@
             .option {
               .item {
                 font-size: 10px;
+                #share {
+                  .link {
+                    bottom: 50px;
+                    left: 0;
+                    font-size: 12px;
+                    padding: 4px;
+                    width: 160px;
+                    .box {
+
+                      a, i {
+                        font-size: 24px;
+                      }
+                      p {
+                        font-size: 6px;
+                      }
+                      .btnClipboard {
+                        padding: 4px;
+                      }
+                    }
+                  }
+                }
               }
             }
           }

@@ -14,7 +14,7 @@
             p 作る
     - if @user.posts.present?
       .content
-        - @user.posts.each do |post|
+        - @user.posts.each.with_index do |post|
           .wrap
             .outer
               .text
@@ -26,21 +26,19 @@
                     p メッセージ
                 .item
                   = form_tag tweet_posts_path do
-                    .sns
-                      #share
-                        i class = "fa fa-fw fa-share fa-3x"
+                    #share
+                      i class = "fa fa-fw fa-share fa-3x"
                       p シェアする
-                      #url
-                        | https://nayame.site/answers/#{post.id}
                       .link
                         .box
-                          = link_to "\uf099", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fnayame.net%2Fanswers%2F#{post.id}&text=#{current_user.name}さんの悩meです。#{current_user.name}さんの悩meに答えてあげよう！&hashtags=nayame"
+                          = link_to "\uf099", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fnayame.net%2Fanswers%2F#{post.id}&text=#{current_user.name}さんの悩meです。&hashtags=nayame"
                           p twitterでシェア
                         .box
-                          .btnClipboard data-clipboard-target="#url"
+                          .url class="url#{post.id}"
+                            | https://nayame.site/answers/#{post.id}
+                          .btnClipboard data-clipboard-target=".url#{post.id}"
                             i class = "fa fa-fw fa-link"
                           p URLをコピー
-
 
     - else
       .content

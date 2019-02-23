@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
+    @img = ImageHelper.build("hello")
   end
 
   def show
@@ -21,26 +22,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_hash)
     if @post.save
+      image = ImageHelper.build(params[:post][:content]).tempfile.open
+      client = Aws::S3::Client.new(
+        region:            'ap-northeast-1',
+        access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_KEY']
+      )
+      s3 = Aws::S3::Resource.new(client: client)
+      path = "post_images/post_id:#{@post.id}"
+      obj = s3.bucket('nayame').object(path)
+      obj.upload_file(image)
       redirect_to posts_path, flash: {success: '投稿が完了しました！'}
     else
       render "new", flash: {error: '入力内容に不備があります。'}
     end
-  end
-
-  def tweet
-    client = Twitter::REST::Client.new do |config|
-      # applicationの設定
-      config.consumer_key         = ENV['TWITTER_CONSUMER_KEY']
-      config.consumer_secret      = ENV['TWITTER_CONSUMER_SECRET']
-      # ユーザー情報の設定
-      config.access_token         = ENV['TWITTER_ACCESS_KEY']
-      config.access_token_secret  = ENV['TWITTER_ACCESS_SECRET']
-    end
-    # Twitter投稿
-    client.update(params[:tweet])
-    redirect_to posts_path, notice: 'ツイートしました！'
   end
 
   def authenticate
@@ -49,6 +46,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content, :user_id, :image)
     end
 end

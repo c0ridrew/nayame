@@ -1,5 +1,5 @@
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.5/ext/unf_ext
-/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190202-22697-pk08t1.rb extconf.rb
+/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190223-82660-79b4ys.rb extconf.rb
 checking for -lstdc++... yes
 creating Makefile
 
@@ -35,4 +35,4 @@ linking shared-object unf_ext.bundle
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.5/ext/unf_ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20190202-22697-1x5e7ap
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20190223-82660-1qsv8mj

@@ -1,6 +1,6 @@
 $(function(){
   $(document).on('click','#share', function(){
-    $('.link').toggleClass("clicked");
+    $(this).find($('.link')).toggleClass("clicked");
   });
 });
 
