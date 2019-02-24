@@ -17,7 +17,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require toastr
-//= require bootstrap-sprockets
 //= require data-confirm-modal
 
 //= require clipboard.min.js

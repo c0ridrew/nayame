@@ -1,5 +1,5 @@
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/msgpack-1.2.4/ext/msgpack
-/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190223-82660-18oy5fq.rb extconf.rb
+/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190224-13760-6nhnru.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -36,4 +36,4 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/msgpack-1.2.4/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20190223-82660-1szh4a7/msgpack
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20190224-13760-ali8q3/msgpack

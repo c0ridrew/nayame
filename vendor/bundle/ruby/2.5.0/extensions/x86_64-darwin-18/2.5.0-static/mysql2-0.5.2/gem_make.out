@@ -1,5 +1,5 @@
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
-/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190223-82660-1g5xres.rb extconf.rb --with-opt-lib=/usr/local/opt/openssl/lib --with-opt-include=-I/usr/local/opt/openssl/include
+/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190224-30651-w0kvce.rb extconf.rb --with-opt-lib=/usr/local/opt/openssl/lib --with-opt-include=-I/usr/local/opt/openssl/include
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes
@@ -41,4 +41,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20190223-82660-1meytg4/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20190224-30651-h9olu8/mysql2

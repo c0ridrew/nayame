@@ -1,5 +1,5 @@
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/rmagick-2.16.0/ext/RMagick
-/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190223-82660-zwtr36.rb extconf.rb
+/Users/RyoAndo/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190224-30651-1ufg8ta.rb extconf.rb
 checking for clang... yes
 checking for Magick-config... yes
 checking for outdated ImageMagick version (<= 6.4.9)... no
@@ -129,7 +129,7 @@ creating Makefile
 
 
 ======================================================================
-Sat 23Feb19 18:50:16
+Sun 24Feb19 11:42:16
 This installation of RMagick 2.16.0 is configured for
 Ruby 2.5.0 (x86_64-darwin18) and ImageMagick 6.9.10
 ======================================================================
@@ -219,4 +219,4 @@ linking shared-object RMagick2.bundle
 
 current directory: /Users/RyoAndo/Desktop/nayame/vendor/bundle/ruby/2.5.0/gems/rmagick-2.16.0/ext/RMagick
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20190223-82660-pxe1ku
+/usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20190224-30651-1ighxi9
