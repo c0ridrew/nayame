@@ -3,7 +3,7 @@ module ApplicationHelper
   def meta_tag_twitter()
     twitter_card = {}
     twitter_card[:url] = request.url
-    if controller.controller_path == "answers"
+    if controller.controller_path == "answers" && controller.action_name == "show"
       twitter_card[:title] = "#{@user.name}さんの悩meです"
       twitter_card[:description] = "#{@post.content}"
       twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/nayame/post_images/post_id%3A#{@post.id}"
