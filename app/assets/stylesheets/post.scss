@@ -228,6 +228,7 @@
   right: 50px;
   border-radius: 50%;
   background-color: #FFF;
+  z-index: 1;
 }
 
 @media screen and (max-width: 640px) {
@@ -333,6 +334,7 @@
     }
   }
   #nav-home {
+    z-index: 1;
     bottom: 20px;
     right: 20px;
   }
