@@ -6,7 +6,7 @@ module ImageHelper
   GRAVITY = 'center'.freeze
   TEXT_POSITION = '0,0'.freeze
   FONT = './app/assets/fonts/NotoSerifTC-Light.otf'.freeze
-  FONT_SIZE = 42
+  FONT_SIZE = 64
   INDENTION_COUNT = 11
   ROW_LIMIT = 8
 
