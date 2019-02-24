@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_hash)
+    @post = Post.new(post_params)
     if @post.save
       image = ImageHelper.build(params[:post][:content]).tempfile.open
       client = Aws::S3::Client.new(
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:content, :user_id, :image)
+      params.require(:post).permit(:content, :user_id)
     end
 end

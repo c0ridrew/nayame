@@ -10,7 +10,7 @@ module ApplicationHelper
     else
       twitter_card[:title] = "Nayame"
       twitter_card[:description] = "悩me|あなたの疑問、答えます。〜匿名回答サービス"
-      twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo.png"
+      twitter_card[:image] = "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
     end
     twitter_card
   end

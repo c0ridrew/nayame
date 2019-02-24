@@ -1,4 +1,5 @@
 #answer_index {
+  min-height: 100vh;
   .wrap {
     text-align: center;
     padding: 40px;
@@ -36,7 +37,7 @@
 }
 #answer_show {
   background-color: #f2c76d;
-  min-width: 100vw;
+  min-height: 100vh;
   .wrap {
     text-align: center;
     padding: 100px;
