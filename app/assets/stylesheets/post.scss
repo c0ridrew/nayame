@@ -71,9 +71,20 @@
               margin: 0;
             }
             .item {
+              position: relative;
               color: #333;
               width: 95%;
               margin: 0 auto;
+              .number {
+                position: absolute;
+                top: 0;
+                right: 150px;
+                color: #fff;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50%;
+              }
               #share {
                 position: relative;
                 cursor: pointer;
@@ -250,6 +261,11 @@
             .option {
               .item {
                 font-size: 10px;
+                .number {
+                  right: 60px;
+                  width: 14px;
+                  height: 14px;
+                }
                 #share {
                   .link {
                     bottom: 50px;

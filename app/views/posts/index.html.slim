@@ -23,6 +23,8 @@
                 .item
                   = link_to post_path(post) do
                     i class = "fa fa-fw fa-envelope fa-3x"
+                    .number
+                      = post.answers.count
                     p メッセージ
                 .item
                   = form_tag tweet_posts_path do
