@@ -5,7 +5,7 @@ module ImageHelper
   BASE_IMAGE_PATH = 'https://s3-ap-northeast-1.amazonaws.com/nayame/lp/templete.png'.freeze
   GRAVITY = 'center'.freeze
   TEXT_POSITION = '0,0'.freeze
-  FONT = './app/assets/fonts/NotoSerifTC-Light.otf'
+  FONT = './app/assets/fonts/03スマートフォントUI.otf'
   FONT_SIZE = 64
   INDENTION_COUNT = 11
   ROW_LIMIT = 8
