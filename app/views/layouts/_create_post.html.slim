@@ -1,0 +1,18 @@
+.create_post
+  .modal-layer
+  .modal
+    .card
+      .wrap
+        .card-top
+          .image
+            = image_tag current_user.image.thumb.url
+          .name
+            p = current_user.name
+        .card-content
+          = form_tag({:controller => 'posts', :action => 'index'}, :remote => true, :class => 'form-ajax') do
+            .outer
+              = text_area_tag :content, "" , :placeholder => 'あなたの悩meをお書きください...', id: 'post_content'
+              = hidden_field_tag :user_id, current_user.id, id: 'post_user_id'
+        .btn
+          p = submit_tag "投稿", class: 'btn btn-primary', id: 'create_post'
+          p = submit_tag "twitterでシェア", class: 'btn btn-success', id: 'share_post'

@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_many :posts, foreign_key: "user_id", :dependent => :destroy, class_name: "Post"
+  mount_uploader :image, UserImageUploader
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

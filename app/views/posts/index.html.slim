@@ -1,52 +1,31 @@
-#post_index
-  .body
-    .profile
-      .wrap
-        p = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
-        p = current_user.name
-        p = link_to "\uf007 編集", edit_user_registration_path
-        p = link_to "\uf011 ログアウト", destroy_user_session_path, method: :delete
-    .option
-      .create
-        .box
-          = link_to new_post_path do
-            i class = "fa fa-fw fa-edit fa-4x"
-            p 作る
-    - if @user.posts.present?
-      .content
-        - @user.posts.each.with_index do |post|
-          .wrap
-            .outer
-              .text
-                p = post.content
-              .option
-                .item
-                  = link_to post_path(post) do
-                    i class = "fa fa-fw fa-envelope fa-3x"
-                    .number
-                      = post.answers.count
-                    p メッセージ
-                .item
-                  = form_tag tweet_posts_path do
-                    #share
-                      i class = "fa fa-fw fa-share fa-3x"
-                      p シェアする
-                      .link
-                        .box
-                          = link_to "\uf099", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fnayame.site%2Fanswers%2F#{post.id}&text=#{current_user.name}さんの悩meです。&hashtags=nayame"
-                          p twitterでシェア
-                        .box
-                          .url class="url#{post.id}"
-                            | https://nayame.site/answers/#{post.id}
-                          .btnClipboard data-clipboard-target=".url#{post.id}"
-                            i class = "fa fa-fw fa-link"
-                          p URLをコピー
-
-    - else
-      .content
+= render 'layouts/create_post'
+.body
+  .container
+    - @posts.each do |post|
+      .card
         .wrap
-          .outer
-            .text
-              p 上のボタンから
-              br 悩meを作成しよう！
+          .card-top
+            .image
+              = link_to mypage_path(post.users.map{|t| t.id}.join) do
+                = image_tag post.users.map{|t| t.image.thumb.url}.join
+            .name
+              = current_user.name
+            .time
+              i class = "fa fa-fw fa-clock-o fa-2x"
+              span = time_ago_in_words(post.created_at)
+              span 前
+          .card-content
+            .outer
+              = post.content
+            .outer
+              | 回答受付中です...
+          .card-bottom
+            .item
+              .send
+                = link_to post_path(post) do
+                  i class = "fa fa-fw fa-envelope fa-2x"
+                .num
+                  = post.answers.count
+            .item
+              i class = "fa fa-fw fa-share fa-2x"
 

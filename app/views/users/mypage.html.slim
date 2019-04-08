@@ -1,0 +1,49 @@
+.body
+  .container
+    = form_for @user, url: {:controller => "users/registrations", :action => "update"} do |f|
+      .profile
+        .wrap
+          .item
+            .profile_image
+              = image_tag current_user.image.url
+              = f.label :image, "", class: 'image_file'
+          .item
+            .form
+              = f.file_field :image
+            .form
+              = f.text_field :name, :placeholder => 'name'
+            .form
+              = f.text_area :bio, :placeholder => 'profile'
+            .preview
+            .btn
+              = f.submit "変更", id: "user_update"
+    - current_user.posts.each do |post|
+      .card
+        .wrap
+          .card-top
+            .image
+              = link_to mypage_path(post.users.map{|t| t.id}.join) do
+                = image_tag post.users.map{|t| t.image.thumb.url}.join
+            .name
+              p = current_user.name
+            .time
+              i class = "fa fa-fw fa-clock-o fa-2x"
+              span = time_ago_in_words(post.created_at)
+              span 前
+          .card-content
+            .outer
+              p = post.content
+            .outer
+              p 回答受付中です...
+          .card-bottom
+            .item
+              = link_to post_path(post) do
+                i class = "fa fa-fw fa-envelope fa-2x"
+              .num
+                = post.answers.count
+            .item
+              i class = "fa fa-fw fa-share fa-2x"
+      .answer
+        - post.answers.each do |answer|
+          .card
+            = answer.content

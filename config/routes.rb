@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks'
   }
 
+  get 'user/:id', to: 'users#mypage', as: 'mypage'
+
   resources :lp, only: [:index]
   resources :posts do
     collection do
@@ -15,9 +17,9 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
-  resources :answers, only: [:index, :show, :create, :destroy]
-
-  get '*not_found' => 'application#routing_error'
-  post '*not_found' => 'application#routing_error'
-
+  resources :answers, only: [:index, :show, :create, :destroy] do
+    collection do
+      post 'share/:id', to: 'answers#share', as: 'share'
+    end
+  end
 end

@@ -1,24 +1,36 @@
-= render 'partial/nav_home'
+= render 'layouts/nav_home'
 
-#post_show
-  .wrap
-    .title
-      p
-        = current_user.name
-        |さんの
-        br
-        |悩meです
-    .content
-      .text
-        p = @post.content
-        .button
-          p = link_to "\uf1f8 削除", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？", commit: "削除", cancel: "やめる"}, :class => "btn btn-danger"
-
-      - if @post.answers.present?
-        - @post.answers.each do |answer|
-          .answer
-            p = answer.content
-            p = link_to "\uf1f8 削除", answer_path(answer), method: :delete, data: {confirm: "本当に削除してよろしいですか？", commit: "削除", cancel: "やめる"}, :class => "btn btn-danger"
-      - else
-        .empty
-          p 答えが届くと表示されます！
+.answer
+  .body
+    .container
+      .card
+        .wrap
+          .card-top
+            .image
+              = image_tag @post.users.map{|t| t.image.thumb.url}.join
+            .name
+              = current_user.name
+            .time
+              i class = "fa fa-fw fa-clock-o fa-2x"
+              span = time_ago_in_words(@post.created_at)
+              span 前
+          .card-content
+            .outer
+              = @post.content
+            .outer
+              | 回答受付中です...
+      .form
+        = form_for @answer do |f|
+          .card
+            .wrap
+              .card-top
+                .image
+                  = image_tag current_user.image.thumb.url
+                .name
+                  = current_user.name
+              .card-content
+                .outer
+                  = f.text_area :content
+                  = f.hidden_field :post_id, value: params[:id]
+              .btn
+                = f.submit "送信", class: 'btn btn-primary'

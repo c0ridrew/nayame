@@ -1,0 +1,9 @@
+#sidebar
+  .wrap
+    ul
+      - if user_signed_in?
+        li = link_to "\uf007 ログアウト", destroy_user_session_path, method: :delete
+        li = link_to "\uf059 使い方", lp_index_path
+      - else
+        li = link_to '新規登録', new_user_registration_path, :class => "sign_up"
+        li = link_to 'ログイン', new_user_session_path, :class => "sign_in"

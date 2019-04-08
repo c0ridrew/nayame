@@ -2,15 +2,6 @@
   #body
     .wrap
       .screen
-        .nav
-          .item-left
-            p = link_to "home", root_path
-          .item-right
-            - if user_signed_in?
-              span = link_to 'ログアウト', destroy_user_session_path, method: :delete
-            - else
-              span = link_to "新規登録", new_user_registration_path
-              span = link_to "ログイン", new_user_session_path
         .title
           - if browser.device.mobile?
             .logo = image_tag "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png"
@@ -59,7 +50,5 @@
           p -使用上の注意-
         .content
           p 悩meは匿名で回答が送信されますが、相手を誹謗中傷するようなメッセージを送信することはお控えください。本サービス利用の際の一切のトラブルはユーザ様自身の責任となりますので、ネットリテラシーを持って、正しく楽しく使用してください。サービス改善のため、バグや希望改善箇所等ありましたら、下のリンク先にある「システムに関するご意見・ご要望」をクリックし、メッセージを送信してください。
-  #footer
-    = render 'partial/footer'
-
+= render 'layouts/footer'
 

@@ -1,0 +1,101 @@
+#navbar {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #909090;
+  z-index: 1;
+  .wrap {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      content: "";
+      background-image: url("https://s3-ap-northeast-1.amazonaws.com/nayame/lp/logo-small.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+    }
+    .menu-trigger {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      span {
+        position: absolute;
+        content: "";
+        width: 24px;
+        height: 2px;
+        background-color: #333;
+      }
+      span:nth-of-type(1) {
+        top: 10px;
+      }
+      span:nth-of-type(2) {
+        top: 20px;
+      }
+      span:nth-of-type(3) {
+        top: 30px;
+      }
+    }
+  }
+}
+
+#nav-home {
+  position: fixed;
+  padding: 6px;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #333;
+  background-color: #FFF;
+  z-index: 2;
+  i {
+    color: #333;
+  }
+}
+
+#sidebar {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  right: 0;
+  width: 200px;
+  z-index: 1;
+  ul {
+    list-style-type: none;
+    li {
+      padding: 8px;
+      a {
+        font-family: FontAwesome;
+      }
+    }
+  }
+}
+
+#footer {
+  text-align: center;
+  width: 1450px;
+  background-color: #5a5a5a;
+  .wrap {
+    h3 {
+      font-size: 12px;
+      color: #fff;
+      margin: 0;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #nav-home {
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+  }
+  #footer {
+    width: 100%;
+  }
+}

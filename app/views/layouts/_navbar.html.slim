@@ -1,0 +1,10 @@
+#navbar
+  .wrap
+    .profile
+      = link_to mypage_path(current_user.id) do
+        = image_tag current_user.image.thumb.url
+    .logo
+    .menu-trigger
+      span
+      span
+      span

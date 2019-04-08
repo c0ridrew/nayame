@@ -1,0 +1,8 @@
+#nav-home
+  .btn
+    - if check_page('posts', 'index')
+      #createBtn
+        i class = "fa fa-plus fa-3x"
+    - else
+      = link_to posts_path do
+        i class = "fa fa-globe fa-3x"

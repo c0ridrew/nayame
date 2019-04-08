@@ -3,11 +3,13 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @img = ImageHelper.build("hello")
+    @post = Post.new
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
     @post = Post.find(params[:id])
+    @answer = Answer.new
     redirect_to posts_path, flash: {error: '権限がありません'} unless current_user.id == @post.user_id
   end
 
@@ -24,24 +26,28 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      image = ImageHelper.build(params[:post][:content]).tempfile.open
-      client = Aws::S3::Client.new(
-        region:            'ap-northeast-1',
-        access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
-        secret_access_key: ENV['AWS_SECRET_KEY']
-      )
-      s3 = Aws::S3::Resource.new(client: client)
-      path = "post_images/post_id:#{@post.id}"
-      obj = s3.bucket('nayame').object(path)
-      obj.upload_file(image)
-      redirect_to posts_path, flash: {success: '投稿が完了しました！'}
+      respond_to do |format|
+        format.html { redirect_to :root }
+        format.json { render json: @todo }
+      end
     else
       render "new", flash: {error: '入力内容に不備があります。'}
     end
-  end
-
-  def authenticate
-    redirect_to new_user_registration_path, flash: {error: 'ログインしていません'} unless user_signed_in?
+    # if @post.save
+    #   image = ImageHelper.build(params[:post][:content]).tempfile.open
+    #   client = Aws::S3::Client.new(
+    #     region:            'ap-northeast-1',
+    #     access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    #     secret_access_key: ENV['AWS_SECRET_KEY']
+    #   )
+    #   s3 = Aws::S3::Resource.new(client: client)
+    #   path = "post_images/test_post_id:#{@post.id}"
+    #   obj = s3.bucket('nayame').object(path)
+    #   obj.upload_file(image)
+    #   redirect_to posts_path, flash: {success: '投稿が完了しました！'}
+    # else
+    #   render "new", flash: {error: '入力内容に不備があります。'}
+    # end
   end
 
   private

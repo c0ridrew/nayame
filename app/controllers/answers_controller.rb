@@ -8,11 +8,12 @@ class AnswersController < ApplicationController
 
   def create
     answer = Answer.new(answer_params)
-    post = Post.find(answer.post_id)
     if answer.save
-      redirect_to answers_path, flash: {success: '送信が完了しました！'}
+      redirect_to posts_path
+      flash[:success] = '送信が完了しました！'
     else
-      redirect_to answer_path(post), flash: {error: '入力内容に不備があります。'}
+      redirect_back(fallback_location: root_path)
+      flash[:error] = '入力内容に不備があります。'
     end
   end
 
@@ -22,7 +23,17 @@ class AnswersController < ApplicationController
     redirect_to post_path(answer.post_id), flash: {info: '答えを削除しました。'}
   end
 
-  def complete
+  def share
+    image = ImageHelper.build(params[:post][:content]).tempfile.open
+    client = Aws::S3::Client.new(
+      region:            'ap-northeast-1',
+      access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_KEY']
+    )
+    s3 = Aws::S3::Resource.new(client: client)
+    path = "answer_images/test_answer_id:#{@post.id}"
+    obj = s3.bucket('nayame').object(path)
+    obj.upload_file(image)
   end
 
   private

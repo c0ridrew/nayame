@@ -19,6 +19,11 @@
 //= require toastr
 
 //= require clipboard.min.js
-//= requier post.js
+//= require post.js
+//= require layouts.js
+
+$(function(){
+  toastr.options.timeOut = 1500;
+});
 
 
