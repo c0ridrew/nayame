@@ -1,8 +1,8 @@
-#navbar
+.navbar
   .wrap
     .profile
       = link_to mypage_path(current_user.id) do
-        = image_tag current_user.image.thumb.url
+       = image_tag current_user.image.present? ? current_user.image.thumb.url : "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/person.png", class: "profile-img"
     .logo
     .menu-trigger
       span

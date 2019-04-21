@@ -5,7 +5,7 @@
       .wrap
         .card-top
           .image
-            = image_tag current_user.image.thumb.url
+            = image_tag current_user.image.present? ? current_user.image.thumb.url : "https://s3-ap-northeast-1.amazonaws.com/nayame/lp/person.png"
           .name
             p = current_user.name
         .card-content

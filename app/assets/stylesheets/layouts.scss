@@ -1,4 +1,4 @@
-#navbar {
+.navbar {
   margin: 0;
   position: fixed;
   width: 100%;
@@ -17,6 +17,9 @@
       background-size: contain;
       width: 40px;
       height: 40px;
+    }
+    .profile-img {
+      width: 14%;
     }
     .menu-trigger {
       position: relative;
@@ -43,7 +46,7 @@
   }
 }
 
-#nav-home {
+.nav-home {
   position: fixed;
   padding: 6px;
   bottom: 50px;
@@ -57,7 +60,7 @@
   }
 }
 
-#sidebar {
+.sidebar {
   display: none;
   position: fixed;
   background-color: #fff;
@@ -75,7 +78,7 @@
   }
 }
 
-#footer {
+.footer {
   text-align: center;
   width: 1450px;
   background-color: #5a5a5a;
@@ -90,12 +93,12 @@
 }
 
 @media screen and (max-width: 640px) {
-  #nav-home {
+  .nav-home {
     z-index: 1;
     bottom: 20px;
     right: 20px;
   }
-  #footer {
+  .footer {
     width: 100%;
   }
 }
